@@ -1,0 +1,22 @@
+{
+  "name": "mmm-googledrivephotos",
+  "version": "1.0.0",
+  "description": "MagicMirror module to display photos from a Google Drive folder",
+  "main": "MMM-GoogleDrivePhotos.js",
+  "scripts": {
+    "auth": "node auth.js",
+    "list-folders": "node auth.js",
+    "debug": "node debug.js"
+  },
+  "keywords": [
+    "magicmirror",
+    "google-drive",
+    "slideshow",
+    "photo-frame"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "^128.0.0"
+  }
+}

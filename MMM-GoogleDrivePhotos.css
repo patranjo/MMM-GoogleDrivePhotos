@@ -1,0 +1,133 @@
+/* MMM-GoogleDrivePhotos Styles
+ * Clean, elegant photo display with smooth transitions
+ */
+
+.mmm-gdrivephotos-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Photo slots for crossfade transitions */
+.mmm-gdrivephotos-slot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 2s ease-in-out;
+  z-index: 1;
+}
+
+.mmm-gdrivephotos-slot.slot-1 {
+  z-index: 2;
+}
+
+/* Photo styling */
+.mmm-gdrivephotos-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Optional: Add subtle shadow for floating effect */
+.mmm-gdrivephotos-wrapper.with-shadow .mmm-gdrivephotos-image {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Optional: Add frame effect */
+.mmm-gdrivephotos-wrapper.with-frame .mmm-gdrivephotos-image {
+  border: 8px solid #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Loading state */
+.mmm-gdrivephotos-loading {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: gdrivepulse 2s ease-in-out infinite;
+}
+
+@keyframes gdrivepulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Error state */
+.mmm-gdrivephotos-error {
+  color: rgba(255, 100, 100, 0.8);
+  font-size: 1rem;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Photo info overlay */
+.mmm-gdrivephotos-info {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  padding: 10px 20px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  z-index: 10;
+  transition: opacity 0.5s ease;
+}
+
+/* Ken Burns effect (optional - add class 'with-kenburns' to wrapper) */
+.mmm-gdrivephotos-wrapper.with-kenburns .mmm-gdrivephotos-image {
+  animation: gdrivekenburns 30s ease-in-out infinite alternate;
+}
+
+@keyframes gdrivekenburns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.1) translate(-2%, -1%);
+  }
+}
+
+/* Fullscreen mode adjustments */
+.mmm-gdrivephotos-wrapper.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background: #000;
+}
+
+/* Polaroid style (optional - add class 'polaroid' to wrapper) */
+.mmm-gdrivephotos-wrapper.polaroid .mmm-gdrivephotos-image {
+  border: none;
+  padding: 15px 15px 50px 15px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: rotate(-2deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .mmm-gdrivephotos-info {
+    font-size: 0.75rem;
+    padding: 8px 15px;
+  }
+}
