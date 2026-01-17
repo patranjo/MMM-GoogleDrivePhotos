@@ -26,7 +26,7 @@ Google deprecated the Google Photos Library API in March 2025, removing the abil
 
 ```bash
 cd ~/MagicMirror/modules
-git clone https://github.com/patranjo/MMM-GoogleDrivePhotos.git
+git clone https://github.com/yourusername/MMM-GoogleDrivePhotos.git
 cd MMM-GoogleDrivePhotos
 npm install
 ```
